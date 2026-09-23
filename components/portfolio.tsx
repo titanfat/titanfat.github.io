@@ -86,8 +86,8 @@ export default function Portfolio() {
           {content.experience.map((item) => (
             <article className="experience" key={`${item.company}-${item.period}`}>
               <div><p className="period">{item.period}</p><h3>{item.company}</h3></div>
-              <div><p className="role">{item.role}</p><p className="summary">{item.summary}</p><div className="tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div>
-              {item.href ? <a className="outLink" href={item.href} target="_blank" rel="noreferrer" aria-label={`${item.company} website`}>↗</a> : <span className="outLink muted">—</span>}
+              <div><p className="role">{item.role}</p><p className="summary">{item.summary}</p><div className="tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>{item.links && <div className="experienceLinks">{item.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label} ↗</a>)}</div>}</div>
+              {item.links ? null : item.href ? <a className="outLink" href={item.href} target="_blank" rel="noreferrer" aria-label={`${item.company} website`}>↗</a> : <span className="outLink muted">—</span>}
             </article>
           ))}
         </div>
@@ -97,7 +97,7 @@ export default function Portfolio() {
         <div className="sectionHead"><span>02</span><h2>{content.sectionProjects}</h2></div>
         <div className="projectGrid">
           {content.projects.map((project) => {
-            const card = <><span className="projectIndex">{project.index}</span><p className="projectKind">{project.kind}</p><h3>{project.title}</h3><p>{project.description}</p><span className="projectArrow">{project.href ? "↗" : "—"}</span></>;
+            const card = <><span className="projectIndex">{project.index}</span><p className="projectKind">{project.kind}</p><h3>{project.title}</h3><p>{project.description}</p>{project.links && <div className="projectLinks">{project.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label} ↗</a>)}</div>}<span className="projectArrow">{project.href || project.links ? "↗" : "—"}</span></>;
             return project.href ? <a className="project" href={project.href} target="_blank" rel="noreferrer" key={project.index}>{card}</a> : <article className="project" key={project.index}>{card}</article>;
           })}
         </div>

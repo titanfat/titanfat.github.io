@@ -7,6 +7,7 @@ export type Experience = {
   summary: string;
   tags: string[];
   href?: string;
+  links?: { label: string; href: string }[];
 };
 
 export type Project = {
@@ -15,6 +16,7 @@ export type Project = {
   kind: string;
   description: string;
   href?: string;
+  links?: { label: string; href: string }[];
 };
 
 type Profile = {
@@ -49,7 +51,7 @@ export const profile: Record<Locale, Profile> = {
     title: "I build reliable products from Rails backend to the final screen.",
     intro:
       "Full Stack Ruby on Rails Engineer with 5+ years of experience in PostgreSQL-heavy systems, external integrations and product platforms. I combine hands-on engineering with AI-assisted, contract-driven delivery.",
-    resume: "Download résumé",
+    resume: "Download resume",
     schedule: "Schedule a call",
     terminalTitle: "andrew@portfolio:~",
     terminalHint: "Type help and press Enter",
@@ -109,6 +111,10 @@ export const profile: Record<Locale, Profile> = {
         summary:
           "Built SaaS/PaaS property-management products: REST APIs, PostgreSQL optimization, WebSocket notifications, Sidekiq jobs, monitoring, billing, Vue interfaces and cross-platform mobile scenarios.",
         tags: ["Rails 7", "PostgreSQL", "Sidekiq", "Vue", "Ionic", "Docker"],
+        links: [
+          { label: "o-din.ru", href: "https://o-din.ru/" },
+          { label: "ord-in.com", href: "https://ord-in.com/" },
+        ],
       },
       {
         company: "Softproekt",
@@ -153,16 +159,29 @@ export const profile: Record<Locale, Profile> = {
         kind: "SaaS / PaaS",
         description:
           "Property and facility management products with applications, notifications, analytics, payments and mobile tools for service teams.",
+        links: [
+          { label: "o-din.ru", href: "https://o-din.ru/" },
+          { label: "ord-in.com", href: "https://ord-in.com/" },
+        ],
       },
     ],
     terminal: {
-      help: ["Commands: about, skills, experience, projects, contact, resume, clear"],
+      help: ["Commands: whoami, cat profile.yml, about, skills, experience, projects, contact, resume, clear"],
+      whoami: ["> Andrew Titov"],
+      "cat profile.yml": [
+        "# Core profile",
+        'role: "Full Stack Ruby on Rails Engineer"',
+        'focus: ["Rails Backend", "Full Stack", "Integrations"]',
+        'stack: ["PostgreSQL", "Redis", "Sidekiq", "Docker"]',
+        'experience: "5+ years"',
+        'location: "Moscow / Remote"',
+      ],
       about: ["Andrew Titov", "Full Stack Ruby on Rails Engineer", "Moscow, Russia · English B1"],
       skills: ["Rails · PostgreSQL · Redis · Sidekiq", "REST/SOAP · Docker · CI/CD", "Vue · Hotwire · Turbo Native · Telegram Mini Apps"],
       experience: ["5+ years building product platforms and integration-heavy systems.", "Current: Full Stack Developer at Pinecode."],
       projects: ["Skyline / Poker", "DRCT NDC Gateway", "Rubetek Platform", "ODIN Property Platform"],
       contact: ["Email: tit22an@gmail.com", "Telegram: @andrewcomrade", "LinkedIn: /in/andrew-titov-046248203"],
-      resume: ["Use the Download résumé button below the introduction."],
+      resume: ["Use the Download resume button below the introduction."],
     },
   },
   ru: {
@@ -232,6 +251,10 @@ export const profile: Record<Locale, Profile> = {
         summary:
           "Разрабатывал SaaS/PaaS для управления недвижимостью: REST API, оптимизация PostgreSQL, WebSocket-уведомления, Sidekiq, мониторинг, биллинг, Vue и мобильные сценарии.",
         tags: ["Rails 7", "PostgreSQL", "Sidekiq", "Vue", "Ionic", "Docker"],
+        links: [
+          { label: "o-din.ru", href: "https://o-din.ru/" },
+          { label: "ord-in.com", href: "https://ord-in.com/" },
+        ],
       },
       {
         company: "Софтпроект",
@@ -276,10 +299,23 @@ export const profile: Record<Locale, Profile> = {
         kind: "SaaS / PaaS",
         description:
           "Продукты для управления недвижимостью: заявки, уведомления, аналитика, платежи и мобильные инструменты сервисных команд.",
+        links: [
+          { label: "o-din.ru", href: "https://o-din.ru/" },
+          { label: "ord-in.com", href: "https://ord-in.com/" },
+        ],
       },
     ],
     terminal: {
-      help: ["Команды: about, skills, experience, projects, contact, resume, clear"],
+      help: ["Команды: whoami, cat profile.yml, about, skills, experience, projects, contact, resume, clear"],
+      whoami: ["> Андрей Титов"],
+      "cat profile.yml": [
+        "# Профиль",
+        'role: "Full Stack Ruby on Rails разработчик"',
+        'focus: ["Rails Backend", "Full Stack", "Интеграции"]',
+        'stack: ["PostgreSQL", "Redis", "Sidekiq", "Docker"]',
+        'experience: "5+ лет"',
+        'location: "Москва / Remote"',
+      ],
       about: ["Андрей Титов", "Full Stack Ruby on Rails разработчик", "Москва · English B1"],
       skills: ["Rails · PostgreSQL · Redis · Sidekiq", "REST/SOAP · Docker · CI/CD", "Vue · Hotwire · Turbo Native · Telegram Mini Apps"],
       experience: ["Более 5 лет в продуктовых платформах и интеграционных системах.", "Сейчас: Full Stack разработчик в Pinecode."],
