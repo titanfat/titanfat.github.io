@@ -1,6 +1,4 @@
-# Andrew Titov portfolio
-
-Static Next.js portfolio for GitHub Pages.
+# Static Next.js portfolio for GitHub Pages.
 
 ```bash
 npm install
